@@ -11,8 +11,8 @@
       state: ertleader
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - names_last
+        - NamesFirstMilitaryLeader
+        - names_last
     - type: RandomHumanoidSpawner
       settings: ERTLeader
 
@@ -28,8 +28,8 @@
       prototypes: [ ERTLeaderGear ]
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - names_last
+        - NamesFirstMilitaryLeader
+        - names_last
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -66,8 +66,8 @@
       state: ertjanitor
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: RandomHumanoidSpawner
       settings: ERTJanitor
 
@@ -81,8 +81,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
 
@@ -121,8 +121,8 @@
       state: ertengineer
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: RandomHumanoidSpawner
       settings: ERTEngineer
 
@@ -136,8 +136,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
 
@@ -176,8 +176,8 @@
       state: ertsecurity
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: RandomHumanoidSpawner
       settings: ERTSecurity
 
@@ -191,8 +191,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
 
@@ -231,8 +231,8 @@
       state: ertmedical
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: RandomHumanoidSpawner
       settings: ERTMedical
 
@@ -246,8 +246,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
 
@@ -290,15 +290,15 @@
   id: CBURNAgent
   components:
     - type: Loadout
-      prototypes: [CBURNGear]
+      prototypes: [ CBURNGear ]
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - names_last
+        - NamesFirstMilitary
+        - names_last
 ## Central Command
 
 - type: entity
@@ -339,7 +339,7 @@
   id: SyndicateAgent
   components:
     - type: Loadout
-      prototypes: [SyndicateOperativeGearExtremelyBasic]
+      prototypes: [ SyndicateOperativeGearExtremelyBasic ]
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp
@@ -368,8 +368,8 @@
       settings: Cluwne
     - type: RandomMetadata
       nameSegments:
-      - names_first
-      - names_last
+        - names_first
+        - names_last
 
 - type: randomHumanoidSettings
   id: Cluwne
@@ -380,3 +380,56 @@
       description: ghost-role-information-cluwne-description
     - type: GhostTakeoverAvailable
     - type: Cluwne
+
+
+## DeathSquad
+
+- type: entity
+  id: RandomHumanoidSpawnerDeathSquadMember
+  name: DeathSquad
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: deathsquad
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstMilitaryLeader
+        - names_last
+    - type: RandomHumanoidSpawner
+      settings: DeathSquadMember
+
+- type: randomHumanoidSettings
+  id: DeathSquadMember
+  randomizeName: false
+  components:
+    - type: Loadout
+      prototypes: [ DeathSquadGear ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstMilitaryLeader
+        - names_last
+
+- type: entity
+  id: RandomHumanoidSpawnerDeathSquadMemberGhost
+  parent: RandomHumanoidSpawnerDeathSquadMember
+  suffix: Ghost Role
+  components:
+    - type: RandomHumanoidSpawner
+      settings: DeathSquadMemberGhost
+
+- type: randomHumanoidSettings
+  id: DeathSquadMemberGhost
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: ghost-role-information-deathsquad-name
+      description: ghost-role-information-deathsquad-description
+      rules: ghost-role-information-deathsquad-rules
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ DeathSquadGear ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstMilitaryLeader
+        - names_last
+
